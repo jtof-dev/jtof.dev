@@ -36,8 +36,19 @@ a {
     color: #ffc0cb;
 }
 
-.link-logo {
+svg {
+    width: 50px;
+    height: auto;
+    fill: pink;
+    transition: fill linear .15s;
+}
+
+svg:hover {
+    fill: white;
+}
+
+/* .link-logo {
     width: 50px;
     height: auto;
     filter: invert(78%) sepia(14%) saturate(590%) hue-rotate(301deg) brightness(97%) contrast(112%);
-}
+} */
