@@ -2,45 +2,62 @@
 
 body {
     max-width: 800px;
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
 
-    background-color: rgb(23, 23, 23);
+    background-color: #141414;
     font-family: "Fira Code";
-    color: white;
+    color: #ffffff;
+}
+
+p.intro {
+    font-size: 20px;
 }
 
 h1 {
-    color: blue;
+    color: #1F75FE;
     font-size: 40px;
+    text-align: center;
 
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 30px;
+    color: #1F75FE;
 
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 h3 {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 a {
     text-decoration: none;
-    color: #ffc0cb;
+    color: #1F75FE;
+}
+
+img {
+    width: 55px;
+    height: auto;
+}
+
+img.java {
+    width: 35px;
+    height: auto;
 }
 
 svg {
     width: 50px;
     height: auto;
-    fill: rgb(104, 104, 104);
+    fill: #9b9b9b;
     transition: fill linear .15s;
+    text-align: center !important;
 }
 
 svg.email {
@@ -49,7 +66,7 @@ svg.email {
 }
 
 svg.github:hover {
-    fill: white;
+    fill: #ffffff;
 }
 
 svg.linkedin:hover {
@@ -59,9 +76,3 @@ svg.linkedin:hover {
 svg.email:hover {
     fill: #6D4AFF;
 }
-
-/* .link-logo {
-    width: 50px;
-    height: auto;
-    filter: invert(78%) sepia(14%) saturate(590%) hue-rotate(301deg) brightness(97%) contrast(112%);
-} */
