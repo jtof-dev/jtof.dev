@@ -38,6 +38,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* h2.color-h2 {
+    color: pink;
+} */
+
 h3 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -84,4 +88,38 @@ svg.email:hover {
 
 svg.youtube:hover {
     fill: #ff0000;
+}
+
+svg.steam:hover {
+    fill: #127AAD;
+}
+
+svg.spotify:hover {
+    fill: #20D860;
+}
+
+.left-right-h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-right-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-links, .right-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+a.left-links {
+    margin-right: 15px;
+    text-align: left;
+}
+
+a.right-links {
+    margin-left: 15px; /* Adjust margin as needed */
+    text-align: right;
 }
