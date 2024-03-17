@@ -39,12 +39,25 @@ a {
 svg {
     width: 50px;
     height: auto;
-    fill: pink;
+    fill: rgb(104, 104, 104);
     transition: fill linear .15s;
 }
 
-svg:hover {
+svg.email {
+    width: 65px;
+    height: auto;
+}
+
+svg.github:hover {
     fill: white;
+}
+
+svg.linkedin:hover {
+    fill: #0077B5;
+}
+
+svg.email:hover {
+    fill: #6D4AFF;
 }
 
 /* .link-logo {
