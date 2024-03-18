@@ -10,6 +10,20 @@ h2.recipe-name {
     text-align: center;
 }
 
+a.recipe-link {
+    font-size: 24px;
+    display: block;
+    overflow: hidden;
+    transition: .1s;
+    max-height: 40px;
+    padding: 2.5px;
+}
+
+a.hide-recipe {
+    max-height: 0px;
+    padding: 0px;
+}
+
 .hide-notes {
     display: none;
 }
@@ -50,20 +64,62 @@ pre {
     transition: .1s;
 }
 
-body.dark-mode pre {
+body.dark-mode pre, body.dark-mode .search-bar {
     background-color: #171717;
     color: #ffffff;
     border-color: #ffffff;
 }
 
-body.light-mode pre {
+.search-bar::placeholder {
+    color: inherit;
+}
+
+body.light-mode pre, body.light-mode .search-bar {
     background-color: #808080;
     border-style: none;
     color: #eeeeee;
 }
 
+.search-bar {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 1.75px;
+    margin-bottom: 25px;
+}
+
+.left-actions {
+    display: flex;
+    align-items: center;
+}
+
+.homepage-svg {
+    fill: #ffffff;
+}
+
+body.light-mode .homepage-svg {
+    fill: #808080;
+}
+
+.homepage-svg:hover {
+    fill: #1F75FE !important;
+}
+
 @media screen and (max-width: 1000px) {
     button#notes-button {
+        font-size: 24px; 
+    }
+    a.recipe-link {
+        font-size: 30px;
+    }
+    pre {
         font-size: 24px;
+    }
+    .search-bar {
+        font-size: 30px;
     }
 }

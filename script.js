@@ -11,11 +11,11 @@ function initial_setup() {
         document.getElementById("checkbox").checked = 0
     }
     if (window.localStorage.getItem("notes") === null) {
-        window.localStorage.setItem("notes", false)
+        window.localStorage.setItem("notes", true)
     }
     if (window.localStorage.getItem("notes") === "true") {
         document.querySelectorAll("span.notes").forEach(Element => Element.className = "notes")
-        document.getElementById("notes-button").innerHTML = "show my notes"
+        document.getElementById("notes-button").innerHTML = "hide my notes"
     }
     else {
         document.querySelectorAll("span.notes").forEach(Element => Element.className = "notes hide-notes")
@@ -40,12 +40,32 @@ function show_hide_notes() {
     let updated_notes = notes === "true" ?"false":"true"
     if (updated_notes === "true") {
         document.querySelectorAll("span.notes").forEach(Element => Element.className = "notes")
-        document.getElementById("notes-button").innerHTML = "show my notes"
+        document.getElementById("notes-button").innerHTML = "hide my notes"
     }
     else {
         document.querySelectorAll("span.notes").forEach(Element => Element.className = "notes hide-notes")
-        document.getElementById("notes-button").innerHTML = "hide my notes"
+        document.getElementById("notes-button").innerHTML = "show my notes"
     }
 }
 
+function search_recipes(event) {
+    let links = Array.from(document.querySelectorAll('a.recipe-link'))
+    links.filter(link => !link.innerHTML.includes(event.target.value)).forEach(Element => Element.className = "recipe-link hide-recipe")
+    links.filter(link => link.innerHTML.includes(event.target.value)).forEach(Element => Element.classList.remove("hide-recipe"))
+}
+
 document.addEventListener("DOMContentLoaded", initial_setup)
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Extract links from HTML and store them in an array
+    let links = Array.from(document.querySelectorAll('a.recipe-link'));
+
+    // Sort the array alphabetically based on the text content of the links
+    links.sort((a, b) => a.textContent.localeCompare(b.textContent));
+
+    // Create a new HTML string with the sorted links and line breaks
+    let sortedHTML = links.map(link => link.outerHTML).join('');
+
+    // Replace the existing HTML with the sorted HTML
+    document.getElementById('recipe-links').innerHTML = sortedHTML;
+});

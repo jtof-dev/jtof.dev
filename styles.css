@@ -56,6 +56,7 @@ h1 {
 h2 {
     font-size: 30px;
     color: #1F75FE;
+    font-family: inherit;
 
     margin-top: 20px;
     margin-bottom: 20px;
