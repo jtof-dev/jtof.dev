@@ -19,8 +19,13 @@ body.light-mode {
     background-color: #eeeeee;
 }
 
-p.intro {
+p {
     font-size: 18px;
+    text-wrap: pretty;
+}
+
+p.intro {
+    text-align: center;
 }
 
 p.footer {
@@ -45,10 +50,6 @@ h2 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
-/* h2.color-h2 {
-    color: pink;
-} */
 
 h3 {
     margin-top: 20px;
@@ -80,6 +81,8 @@ svg {
     height: auto;
     fill: #808080;
     transition: fill linear .15s;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 svg.email {
@@ -218,4 +221,28 @@ input:checked+.slider:before {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    p {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    img {
+        scale: 1.25;
+    }
+
+    svg {
+        scale: 1.25;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
