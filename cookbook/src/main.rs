@@ -1,10 +1,23 @@
+use regex::Regex;
 use std::fs;
 use std::io::{self};
-use regex::Regex;
 
 fn main() -> io::Result<()> {
+    //     let header_html = r#"
+    //     <!DOCTYPE html>
+    //     <html lang="en">
 
-    let header_html = r#"
+    //     <head>
+    //         <meta charset="UTF-8">
+    //         <title>jtof.dev</title>
+    //         <link rel="stylesheet" href="/styles.css">
+    //         <link rel="stylesheet" href="notes.css">
+    //         <link rel="icon" href="/assets/ferris the crab.png">
+    //         <script src="/script.js"></script>
+    //     </head>
+    // "#;
+
+    let index_header_html = r#"
     <!DOCTYPE html>
     <html lang="en">
     
@@ -27,7 +40,7 @@ fn main() -> io::Result<()> {
         </div>
 "#;
 
-let footer_html = r#"
+    let footer_html = r#"
 <footer>
 <br>
 <br>
@@ -43,7 +56,7 @@ let footer_html = r#"
 "#;
 
     // Specify the directory path
-        let directory_path = "../../../obsidian vault/recipes/";
+    let directory_path = "../../../obsidian vault/recipes/";
     // let directory_path = "recipes/";
 
     // Read the contents of the directory
@@ -68,7 +81,12 @@ let footer_html = r#"
                         .collect();
                     let entry_name = entry_name_with_spaces.replace(" ", "-").to_lowercase();
                     let entry_contents = content;
-                    make_recipe_pages(entry_name, entry_contents, header_html, footer_html);
+                    make_recipe_pages(
+                        entry_name,
+                        entry_name_with_spaces,
+                        entry_contents,
+                        footer_html,
+                    );
                 }
                 Err(err) => {
                     eprintln!("Error reading {}: {}", file_path.display(), err);
@@ -76,13 +94,20 @@ let footer_html = r#"
             }
         }
     }
-
+    // make_index_page(index_header_html, footer_html);
     Ok(())
 }
 
-fn make_recipe_pages(markdown_name: String, mut markdown_contents: String, header_html: &str, footer_html: &str) {
+fn make_recipe_pages(
+    markdown_name: String,
+    markdown_name_with_spaces: String,
+    mut markdown_contents: String,
+    footer_html: &str,
+) {
     let start_index = markdown_contents.find("---").unwrap_or(0);
-    let end_index = markdown_contents.rfind("---").unwrap_or(markdown_contents.len());
+    let end_index = markdown_contents
+        .rfind("---")
+        .unwrap_or(markdown_contents.len());
     markdown_contents.replace_range(start_index..=end_index + 2, "");
 
     // convert markdown to html
@@ -101,7 +126,90 @@ fn make_recipe_pages(markdown_name: String, mut markdown_contents: String, heade
         let matched_text = captures.get(0).unwrap().as_str();
         format!("<span class=\"notes\">{}</span>", matched_text)
     });
+
+    let first_header = r#"
+     <!DOCTYPE html>
+     <html lang="en">
+    
+     <head>
+         <meta charset="UTF-8">
+         <title>jtof.dev</title>
+         <link rel="stylesheet" href="/styles.css">
+         <link rel="stylesheet" href="../notes.css">
+        <link rel="icon" href="/assets/ferris the crab.png">
+         <script src="/script.js"></script>
+     </head>
+
+    <body class="dark-mode">
+    <div class="switch-and-notes">
+        <label class="switch">
+            <input type="checkbox" checked id="checkbox" onchange="switchcolors(event)">
+            <span class="slider round"></span>
+        </label>
+    "#;
+    let second_header = format!(
+        "<h2 class=\"recipe-name\">{}</h2>        
+        <button onclick=\"show_hide_notes()\" id=\"notes-button\">show my notes</button>
+        </div>",
+        markdown_name_with_spaces
+    );
     // write html_contents to file
-    let final_html_contents = format!("{}{}{}", header_html, modified_html_contents, footer_html);
-    fs::write(format!("{}.html", markdown_name), final_html_contents.as_bytes()).unwrap();
+    let final_html_contents = format!(
+        "{}{}{}{}",
+        first_header, second_header, modified_html_contents, footer_html
+    );
+    if let Ok(dir) = fs::read_dir(&markdown_name) {
+        fs::write(
+            format!("{}/index.html", &markdown_name),
+            final_html_contents.as_bytes(),
+        )
+        .unwrap();
+    } else {
+        fs::create_dir(&markdown_name).unwrap();
+        fs::write(
+            format!("{}/index.html", &markdown_name),
+            final_html_contents.as_bytes(),
+        )
+        .unwrap();
+    }
 }
+
+// fn make_index_page(index_header_html: &str, footer_html: &str) {
+
+//     let directory_path = "../../../obsidian vault/recipes/";
+//     // let directory_path = "recipes/";
+
+//     // Read the contents of the directory
+//     let dir_entries = fs::read_dir(directory_path)?;
+
+//     // Iterate over each entry in the directory
+//     for entry in dir_entries {
+//         let entry = entry?;
+
+//         // Check if the entry is a file
+//         if entry.file_type()?.is_file() {
+//             // Get the file path
+//             let file_path = entry.path();
+
+//             // Read the contents of the file
+//             match fs::read_to_string(&file_path) {
+//                 Ok(content) => {
+//                     let entry_name_full = entry.file_name().into_string().unwrap();
+//                     let entry_name_with_spaces: String = entry_name_full
+//                         .chars()
+//                         .take(entry_name_full.len() - 3)
+//                         .collect();
+//                     let entry_name = entry_name_with_spaces.replace(" ", "-").to_lowercase();
+//                     let entry_contents = content;
+//                     make_recipe_pages(entry_name, entry_contents, header_html, footer_html);
+//                 }
+//                 Err(err) => {
+//                     eprintln!("Error reading {}: {}", file_path.display(), err);
+//                 }
+//             }
+//         }
+//     }
+
+//     let final_html_contents = format!("{}{}{}", index_header_html, PLACEHOLDER, footer_html);
+//     fs::write("index.html", final_html_contents.as_bytes()).unwrap();
+// }

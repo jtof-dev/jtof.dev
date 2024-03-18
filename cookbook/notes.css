@@ -2,10 +2,12 @@
     display: flex;
     position: relative;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.notes {
-
+h2.recipe-name {
+    text-align: center;
 }
 
 .hide-notes {
@@ -33,6 +35,31 @@ body.light-mode button#notes-button {
     background-color: #808080;
     color: #eeeeee;
     border-color: #eeeeee;
+}
+
+pre {
+    color: inherit;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 1.75px;
+    padding: 7px;
+    text-wrap: stable;
+    white-space: pre-wrap;
+    font-family: inherit;
+    font-size: 18px;
+    transition: .1s;
+}
+
+body.dark-mode pre {
+    background-color: #171717;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.light-mode pre {
+    background-color: #808080;
+    border-style: none;
+    color: #eeeeee;
 }
 
 @media screen and (max-width: 1000px) {

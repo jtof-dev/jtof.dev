@@ -28,6 +28,16 @@ p.intro {
     text-align: center;
 }
 
+li {
+    font-size: 18px;
+    text-wrap: pretty;
+}
+
+ol {
+    font-size: 18px;
+    text-wrap: pretty;
+}
+
 p.footer {
     text-align: center;
     margin-top: 15px;
@@ -160,6 +170,7 @@ a.right-links {
     display: inline-block;
     width: 60px;
     height: 34px;
+    flex: none;
 }
 
 /* Hide default HTML checkbox */

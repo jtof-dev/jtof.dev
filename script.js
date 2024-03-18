@@ -19,7 +19,7 @@ function initial_setup() {
     }
     else {
         document.querySelectorAll("span.notes").forEach(Element => Element.className = "notes hide-notes")
-        document.getElementById("notes-button").innerHTML = "hide my notes"
+        document.getElementById("notes-button").innerHTML = "show my notes"
     }
 }
 
