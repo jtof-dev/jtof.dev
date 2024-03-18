@@ -74,6 +74,10 @@ body.dark-mode pre, body.dark-mode .search-bar {
     color: inherit;
 }
 
+.search-bar:focus::placeholder {
+    color: transparent;
+}
+
 body.light-mode pre, body.light-mode .search-bar {
     background-color: #808080;
     border-style: none;
