@@ -28,6 +28,28 @@
 - this folder holds the `main.rs` script, and the `.html` files that the script pulls in
   - the html headers and footers are used to cobble together html pages for each recipe
 
+## light and dark mode
+- light and dark mode is controlled by a `localStorage` javascript variable which is checked at load time
+  - light and dark mode respectively set a `light-mode` or `dark-mode` class on the `<body>`
+  - all the color changes are handled by css snippets that check this body class:
+
+```
+body.light/dark-mode class {
+    css
+}
+```
+
+## mobile view
+- a section of `styles.css` checks the screen width, and applies css changes when there are less than a certain number of pixels:
+
+```
+@media screen and (max-width: 1000px) {
+    class {
+        css
+    }
+}
+```
+
 # to do
 - [ ] add resume page
 - [ ] add an about me page
