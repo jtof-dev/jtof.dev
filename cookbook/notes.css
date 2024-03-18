@@ -126,4 +126,7 @@ body.light-mode .homepage-svg {
     .search-bar {
         font-size: 30px;
     }
+    .homepage-svg {
+        padding: 20px;
+    }
 }
