@@ -18,6 +18,16 @@
 
 - as well as a `CNAME` file containing the `jtof.dev` url
 
+## jtof.dev/cookbook
+- I store all of my recipes in obsidian, in a standard markdown format
+- I convert all my recipes to `html` pages with all the custom formatting using `src/main.rs`
+  - this script can be called with `cargo run` from the `cookbook/` folder
+  - this script also gets [automatically called](.git/hooks/pre-commit) using `git hook`'s
+
+### jtof.dev/cookbook/src
+- this folder holds the `main.rs` script, and the `.html` files that the script pulls in
+  - the html headers and footers are used to cobble together html pages for each recipe
+
 # to do
 - [ ] add resume page
 - [ ] add an about me page
