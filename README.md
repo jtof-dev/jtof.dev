@@ -51,6 +51,8 @@ body.light/dark-mode class {
 ```
 
 # to do
+- [ ] tweak mobile view to fit the phone screen better (have the 800px <hr> line completely fill the screen, and increase font size)
+  - [ ] increase mobile view size of home png, dark toggle, and search bar in `cookbook`
 - [ ] add resume page
 - [ ] add an about me page
 - [ ] add movie and show reviews (I can reuse a lot of the code from `cookbook`, with some modified code)
