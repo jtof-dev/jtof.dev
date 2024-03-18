@@ -20,11 +20,17 @@ body.light-mode {
 }
 
 p {
-    font-size: 18px;
+    font-size: 17px;
     text-wrap: pretty;
+    margin: 15px;
 }
 
 p.intro {
+    text-align: center;
+    margin: 7px;
+}
+
+p.footer {
     text-align: center;
 }
 
@@ -38,19 +44,12 @@ ol {
     text-wrap: pretty;
 }
 
-p.footer {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
 h1 {
     color: #1F75FE;
     font-size: 40px;
     text-align: center;
 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 15px
 }
 
 h2 {
@@ -58,18 +57,20 @@ h2 {
     color: #1F75FE;
     font-family: inherit;
 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 15px
 }
 
 h3 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 15px
 }
 
 a {
     text-decoration: none;
     color: #1F75FE;
+}
+
+hr {
+    margin: 7px;
 }
 
 img {
@@ -80,6 +81,7 @@ img {
 img.rust {
     width: 65px;
     height: auto;
+    margin-left: 15px;
 }
 
 img.java {
