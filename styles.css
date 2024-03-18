@@ -5,10 +5,18 @@ body {
     text-align: left;
     margin: 0 auto;
     margin-top: 50px;
-
-    background-color: #171717;
     font-family: "Fira Code";
+    transition: .1s;
+}
+
+body.dark-mode {
+    background-color: #171717;
     color: #ffffff;
+}
+
+body.light-mode {
+    color: #171717;
+    background-color: #eeeeee;
 }
 
 p.intro {
@@ -57,8 +65,13 @@ img {
     height: auto;
 }
 
+img.rust {
+    width: 65px;
+    height: auto;
+}
+
 img.java {
-    width: 35px;
+    width: 65px;
     height: auto;
 }
 
@@ -72,10 +85,15 @@ svg {
 svg.email {
     width: 65px;
     height: auto;
+    margin-top: -12px !important;
 }
 
 svg.github:hover {
     fill: #ffffff;
+}
+
+body.light-mode svg.github:hover {
+    fill: #171515;
 }
 
 svg.linkedin:hover {
@@ -109,17 +127,95 @@ svg.spotify:hover {
     justify-content: space-between;
 }
 
-.left-links, .right-links {
+.left-links,
+.right-links {
     display: flex;
     justify-content: space-between;
 }
 
 a.left-links {
-    margin-right: 15px;
+    margin-right: 25px;
     text-align: left;
 }
 
 a.right-links {
-    margin-left: 15px; /* Adjust margin as needed */
+    margin-left: 25px;
+    /* Adjust margin as needed */
     text-align: right;
+}
+
+
+.site-body-left-column-site-theme-toggle {
+    padding: 0 0 12px 0;
+    display: flex;
+    position: relative;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #808080;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #eeeeee;
+    -webkit-transition: .05s;
+    transition: .05s;
+}
+
+input:checked+.slider {
+    background-color: #1F75FE;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #1F75FE;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.checkmark-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
