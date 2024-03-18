@@ -59,6 +59,7 @@ body.light/dark-mode class {
   - experiment with theme changes
     - take more inspiration from the [gruvbox light theme](https://github.com/morhetz/gruvbox)
     - try out different dark shades
+    - update `<div>` sizes to keep cookbook titles center-aligned
 - [ ] add resume page
 - [ ] add an about me page (probably as part of the homepage)
 - [ ] add movie and show reviews (I can reuse a lot of the code from `cookbook`, with some modified code)
