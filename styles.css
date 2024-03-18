@@ -233,16 +233,20 @@ input:checked+.slider:before {
     }
 
     h2 {
-        font-size: 45px;
+        font-size: 37px;
     }
 
     img {
-        scale: 1.25;
+        scale: 1.15;
     }
 
     svg {
         scale: 1.25;
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .switch {
+        scale: 1.5;
     }
 }
