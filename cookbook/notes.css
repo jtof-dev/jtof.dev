@@ -1,0 +1,42 @@
+.switch-and-notes {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.notes {
+
+}
+
+.hide-notes {
+    display: none;
+}
+
+button#notes-button {
+    text-align: center;
+    border-radius: 7px;
+    border-width: 1.75px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    border-style: solid;
+    padding: 10px;
+}
+
+body.dark-mode button#notes-button {
+    background-color: #171717;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.light-mode button#notes-button {
+    background-color: #808080;
+    color: #eeeeee;
+    border-color: #eeeeee;
+}
+
+@media screen and (max-width: 1000px) {
+    button#notes-button {
+        font-size: 24px;
+    }
+}
