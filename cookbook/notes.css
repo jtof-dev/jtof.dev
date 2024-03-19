@@ -103,14 +103,27 @@ body.light-mode pre, body.light-mode .search-bar {
 
 .homepage-svg {
     fill: #ffffff;
+    transition: .1s;
 }
 
-body.light-mode .homepage-svg {
+.house-filled {
+    fill: transparent;
+    transition: .1s;
+}
+
+body.light-mode .homepage-svg .house-filled {
     fill: #808080;
+    stroke: #808080;
+    stroke-width: 3px;
 }
 
 .homepage-svg:hover {
     fill: #1F75FE !important;
+}
+
+body.light-mode .homepage-svg:hover .house-filled {
+    fill:  #1F75FE !important;
+    stroke: #1F75FE !important;
 }
 
 @media screen and (max-width: 500px) {
