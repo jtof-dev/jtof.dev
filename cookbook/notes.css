@@ -113,7 +113,7 @@ body.light-mode .homepage-svg {
     fill: #1F75FE !important;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
     button#notes-button {
         font-size: 24px; 
     }

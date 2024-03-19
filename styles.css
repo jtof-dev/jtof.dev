@@ -19,15 +19,23 @@ body.light-mode {
     background-color: #eeeeee;
 }
 
+.format-document {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+hr {
+    margin: 7px;
+    border-radius: 7px;
+}
+
 p {
     font-size: 17px;
     text-wrap: pretty;
-    margin: 15px;
 }
 
 p.intro {
     text-align: center;
-    margin: 7px;
 }
 
 p.footer {
@@ -48,29 +56,21 @@ h1 {
     color: #1F75FE;
     font-size: 40px;
     text-align: center;
-
-    margin: 15px
 }
 
 h2 {
     font-size: 30px;
     color: #1F75FE;
     font-family: inherit;
-
-    margin: 15px
 }
 
-h3 {
+/* h3 {
     margin: 15px
-}
+} */
 
 a {
     text-decoration: none;
     color: #1F75FE;
-}
-
-hr {
-    margin: 7px;
 }
 
 img {
@@ -81,7 +81,6 @@ img {
 img.rust {
     width: 65px;
     height: auto;
-    margin-left: 15px;
 }
 
 img.java {
@@ -92,20 +91,32 @@ img.java {
 svg {
     width: 50px;
     height: auto;
-    fill: #808080;
+    fill: 	rgb(156, 156, 156);
     transition: fill linear .15s;
     margin-left: 3px;
     margin-right: 3px;
 }
 
+svg.github {
+    margin-left: 0px;
+}
+
+svg.spotify {
+    margin-right: 0px;
+}
+
 svg.email {
     width: 65px;
     height: auto;
-    margin-top: -12px !important;
+    margin-top: -12px;
 }
 
 svg.github:hover {
     fill: #ffffff;
+}
+
+body.light-mode svg {
+    fill: #808080;
 }
 
 body.light-mode svg.github:hover {
@@ -150,13 +161,10 @@ svg.spotify:hover {
 }
 
 a.left-links {
-    margin-right: 25px;
     text-align: left;
 }
 
 a.right-links {
-    margin-left: 25px;
-    /* Adjust margin as needed */
     text-align: right;
 }
 
@@ -210,6 +218,8 @@ a.right-links {
 
 input:checked+.slider {
     background-color: #1F75FE;
+    border-style: solid;
+    border-width: 2px;
 }
 
 input:focus+.slider {
@@ -237,7 +247,7 @@ input:checked+.slider:before {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
     p {
         font-size: 24px;
     }
