@@ -2,7 +2,7 @@
 - welcome to the github repo for [jtof.dev](https://jtof.dev)!
 - `jtof.dev` is powered by github pages through a handful of domain records (you can find the documentation for this [here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)):
 
-| type  | domain name                                     | content                            |
+| type  | domain name                               | content                          |
 |-------|-------------------------------------------|----------------------------------|
 | A     | jtof.dev                                  | 185.199.108.153                  |
 | A     | jtof.dev                                  | 185.199.109.153                  |
@@ -13,7 +13,7 @@
 | AAAA  | jtof.dev                                  | 2606:50c0:8002::153              |
 | AAAA  | jtof.dev                                  | 2606:50c0:8003::153              |
 | ANAME | jtof.dev                                  | jjtofflemire.github.io           |
-| TXT   | `challenge subdomain`.jtof.dev | `verification code` |
+| TXT   | `challenge subdomain`.jtof.dev            | `verification code`              |
 | CNAME | www.jtof.dev                              | jjtofflemire.github.io           |
 
 - as well as a `CNAME` file containing the `jtof.dev` url
@@ -43,7 +43,7 @@ body.light/dark-mode class {
 - a section of `styles.css` checks the screen width, and applies css changes when there are less than a certain number of pixels:
 
 ```
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
     class {
         css
     }
@@ -52,6 +52,10 @@ body.light/dark-mode class {
 
 # to do
 - [ ] add resume page
-- [ ] add an about me page (probably as part of the homepage)
-- [ ] add movie and show reviews (I can reuse a lot of the code from `cookbook`, with some modified code)
+- [ ] add an about me section to the homepage
+- [ ] add a download button to the header of the recipes
+      - now the header will probably look like: `home button`, `theme toggle`, a gap, `download button`, and `notes button` on one line, and the title of the recipe on the next line
+      - the download should link to a `recipe.md` that has the `tags` section removed (probably in a `recipes/` folder inside `cookbook`)
+- [ ] clean up all `css` files, so that they are reordered in a more straightforward way
+- [ ] update `main.rs` to add `target="_blank"` to the `source` links at the bottom of recipes (if possible)
 - [ ] bugfix `localStorage` not always remembering correctly on page back and forward
