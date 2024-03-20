@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
+:root {
+    --background-color-dark: #171717;
+    --background-color-light: #F5F5DC;
+    --color-dark: #ffffff;
+    --color-light: #3c3836;
+    --accent-color-dark: #1F75FE;
+    --accent-color-light: #458588;
+    --secondary-color-dark: #9c9c9c;
+    --secondary-color-light: #928374;
+}
+
 body {
     max-width: 800px;
     text-align: left;
@@ -10,13 +21,13 @@ body {
 }
 
 body.dark-mode {
-    background-color: #171717;
-    color: #ffffff;
+    background-color: var(--background-color-dark);
+    color: var(--color-dark);
 }
 
 body.light-mode {
-    color: #171717;
-    background-color: #eeeeee;
+    color: var(--color-light);
+    background-color: var(--background-color-light);
 }
 
 footer {
@@ -34,7 +45,15 @@ footer {
 
 hr {
     margin: 7px;
-    border-radius: 7px;
+    color: var(--color-dark);
+    background-color: var(--color-dark);
+    border-style: none;
+    height: 1px;
+}
+
+body.light-mode hr {
+    color: var(--color-light);
+    background-color: var(--color-light);
 }
 
 p {
@@ -51,24 +70,50 @@ p.footer {
 }
 
 li {
-    font-size: 18px;
+    font-size: inherit;
     text-wrap: pretty;
 }
 
+ul {
+    font-size: inherit;
+    text-wrap: pretty;
+    padding-left: 30px;
+}
+
 ol {
-    font-size: 18px;
+    font-size: inherit;
     text-wrap: pretty;
 }
 
 h1 {
-    color: #1F75FE;
+    color: var(--accent-color-dark);
     font-size: 40px;
     text-align: center;
 }
 
+body.light-mode h1, body.light-mode h2 {
+    color: var(--accent-color-light)
+}
+
 h2 {
     font-size: 30px;
-    color: #1F75FE;
+    color: var(--accent-color-dark);
+    font-family: inherit;
+}
+
+h3 {
+    color: var(--accent-color-dark);
+    font-family: inherit;
+}
+
+h3 {
+    font-size: 23px;
+    color: var(--accent-color-dark);
+    font-family: inherit;
+}
+
+body.light-mode h3, body.light-mode h4 {
+    color: var(--accent-color-dark);
     font-family: inherit;
 }
 
@@ -82,7 +127,11 @@ h2 {
 
 a {
     text-decoration: none;
-    color: #1F75FE;
+    color: var(--accent-color-dark);
+}
+
+body.light-mode a {
+    color: var(--accent-color-light);
 }
 
 img {
@@ -103,7 +152,7 @@ img.java {
 svg {
     width: 50px;
     height: auto;
-    fill: 	rgb(156, 156, 156);
+    fill: 	var(--secondary-color-dark);
     transition: fill linear .15s;
     margin-left: 3px;
     margin-right: 3px;
@@ -128,7 +177,7 @@ svg.github:hover {
 }
 
 body.light-mode svg {
-    fill: #808080;
+    fill: var(--secondary-color-light);
 }
 
 body.light-mode svg.github:hover {
@@ -200,7 +249,7 @@ a.right-links {
 }
 
 .switch:has(:checked) {
-    border-color: white;
+    border-color: var(--color-dark);
 }
 
 .switch input {
@@ -216,7 +265,7 @@ a.right-links {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #808080;
+    background-color: var(--secondary-color-light);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -228,17 +277,17 @@ a.right-links {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #eeeeee;
+    background-color: var(--background-color-light);
     -webkit-transition: .05s;
     transition: .05s;
 }
 
 input:checked+.slider {
-    background-color: #171515;
+    background-color: var(--background-color-dark);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #1F75FE;
+    box-shadow: 0 0 1px var(--accent-color-dark);
 }
 
 input:checked+.slider:before {
@@ -292,6 +341,14 @@ input:checked+.slider:before {
         margin-bottom: 0px;
     }
 
+    h3 {
+        font-size: 17px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
     img {
         scale: .65;
         margin-left: -12px;
@@ -318,6 +375,10 @@ input:checked+.slider:before {
 
     .switch {
         scale: .85;
+    }
+
+    li {
+        margin-left: -15px;
     }
 }
 

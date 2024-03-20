@@ -51,12 +51,7 @@ body.light/dark-mode class {
 ```
 
 # to do
-- [ ] tweak css for better theming and better mobile view
-    - add padding to header and footer so that it is padded by a couple of pixels from the edges of the 800px viewbox / mobile view
-  - increase mobile view size of home png, dark toggle, and search bar in `cookbook`
-  - experiment with theme changes
-    - take more inspiration from the [gruvbox light theme](https://github.com/morhetz/gruvbox)
-    - try out different dark shades
 - [ ] add resume page
 - [ ] add an about me page (probably as part of the homepage)
 - [ ] add movie and show reviews (I can reuse a lot of the code from `cookbook`, with some modified code)
+- [ ] bugfix `localStorage` not always remembering correctly on page back and forward
