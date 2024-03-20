@@ -24,6 +24,16 @@ a.hide-recipe {
     padding: 0px !important;
 }
 
+code {
+    color: var(--secondary-color-dark);
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body.light-mode code {
+    color: var(--secondary-color-light);
+}
+
 .notes {
     color: var(--accent-color-dark);
 }
@@ -73,7 +83,6 @@ body.light-mode button#notes-button:hover {
 }
 
 pre {
-    color: inherit;
     border-radius: 7px;
     border-style: solid;
     border-width: 1.75px;
@@ -85,7 +94,14 @@ pre {
     transition: .1s;
 }
 
-body.dark-mode pre,
+pre code {
+    color: var(--color-dark);
+}
+
+body.light-mode pre code {
+    color: var(--background-color-light);
+}
+
 body.dark-mode .search-bar {
     background-color: var(--background-color-dark);
     color: var(--color-dark);
