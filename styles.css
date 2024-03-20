@@ -74,6 +74,10 @@ li {
     text-wrap: pretty;
 }
 
+ul li {
+    padding-left: 10px;
+}
+
 ul {
     font-size: inherit;
     text-wrap: pretty;
@@ -91,7 +95,7 @@ h1 {
     text-align: center;
 }
 
-body.light-mode h1, body.light-mode h2 {
+body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4 {
     color: var(--accent-color-light)
 }
 

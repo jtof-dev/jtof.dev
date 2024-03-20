@@ -26,6 +26,9 @@ a.hide-recipe {
 
 .notes {
     color: var(--accent-color-dark);
+}
+
+body.dark-mode .notes {
     text-shadow: currentColor 0px 0px 10px;
 }
 
