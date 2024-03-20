@@ -250,10 +250,19 @@ a.right-links {
     border-color: transparent;
     border-width: 2px;
     border-radius: 34px;
+    transition: .05s;
 }
 
 .switch:has(:checked) {
     border-color: var(--color-dark);
+}
+
+body.dark-mode .switch:has(:checked):hover {
+    border-color: var(--accent-color-dark);
+}
+
+body.light-mode .switch:not(:checked):hover .slider {
+    background-color: var(--accent-color-light);
 }
 
 .switch input {
@@ -272,6 +281,7 @@ a.right-links {
     background-color: var(--secondary-color-light);
     -webkit-transition: .4s;
     transition: .4s;
+    transition: background-color 0.1s ease-in-out, color 0.5s ease-in-out;
 }
 
 .slider:before {
@@ -333,6 +343,7 @@ input:checked+.slider:before {
 
     p.footer {
         font-size: 11px;
+        margin-bottom: 5px;
     }
 
     h1 {

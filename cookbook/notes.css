@@ -55,12 +55,21 @@ body.dark-mode button#notes-button {
     background-color: var(--background-color-dark);
     color: var(--color-dark);
     border-color: var(--color-dark);
+    transition: .05s;
+}
+
+body.dark-mode button#notes-button:hover {
+    border-color: var(--accent-color-dark);
 }
 
 body.light-mode button#notes-button {
     background-color: var(--secondary-color-light);
     color: var(--background-color-light);
     border-color: var(--background-color-light);
+}
+
+body.light-mode button#notes-button:hover {
+    background-color: var(--accent-color-light);
 }
 
 pre {
