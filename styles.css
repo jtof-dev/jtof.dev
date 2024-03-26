@@ -93,31 +93,32 @@ h1 {
     color: var(--accent-color-dark);
     font-size: 40px;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4 {
-    color: var(--accent-color-light)
+    color: var(--accent-color-light);
 }
 
 h2 {
     font-size: 30px;
     color: var(--accent-color-dark);
     font-family: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 h3 {
     color: var(--accent-color-dark);
     font-family: inherit;
-}
-
-h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 23px;
-    color: var(--accent-color-dark);
-    font-family: inherit;
 }
 
 body.light-mode h3, body.light-mode h4 {
-    color: var(--accent-color-dark);
+    color: var(--accent-color-light);
     font-family: inherit;
 }
 
@@ -324,9 +325,15 @@ input:checked+.slider:before {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 675px) {
     p.footer {
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    p.footer {
+        font-size: 1;
     }
 }
 
@@ -342,7 +349,6 @@ input:checked+.slider:before {
     }
 
     p.footer {
-        font-size: 11px;
         margin-bottom: 5px;
     }
 
@@ -397,7 +403,7 @@ input:checked+.slider:before {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
     p.footer {
         font-size: 10px;
     }
