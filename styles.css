@@ -344,8 +344,8 @@ input:checked+.slider:before {
 
     p {
         font-size: 15px;
-        margin-top: 0px;
-        margin-bottom: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     p.footer {
@@ -400,6 +400,10 @@ input:checked+.slider:before {
 
     li {
         margin-left: -15px;
+    }
+
+    hr {
+        margin-top: 20px;
     }
 }
 
