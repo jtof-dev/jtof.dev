@@ -1,5 +1,11 @@
 .left-right-h2 h3 {
     color: var(--color-dark);
+    text-align: left;
+}
+
+.left-right-h2 p {
+    text-align: right;
+    margin-left: 10px;
 }
 
 body.light-mode .left-right-h2 h3 {
@@ -28,4 +34,22 @@ hr {
 
 footer hr {
     margin: 7px;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 30px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    h2 {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    h3 {
+        font-size: 17px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }

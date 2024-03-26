@@ -325,13 +325,13 @@ input:checked+.slider:before {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 700px) {
     p.footer {
         font-size: 14px;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 525px) {
     p.footer {
         font-size: 1;
     }
@@ -403,7 +403,7 @@ input:checked+.slider:before {
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
     p.footer {
         font-size: 10px;
     }
