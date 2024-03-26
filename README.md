@@ -51,8 +51,6 @@ body.light/dark-mode class {
 ```
 
 # to do
-- [ ] add resume page
-- [ ] add an about me section to the homepage
 - [ ] add a download button to the header of the recipes
       - now the header will probably look like: `home button`, `theme toggle`, a gap, `download button`, and `notes button` on one line, and the title of the recipe on the next line
       - the download should link to a `recipe.md` that has the `tags` section removed (probably in a `recipes/` folder inside `cookbook`)
