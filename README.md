@@ -43,7 +43,7 @@ body.light/dark-mode class {
 - a section of `styles.css` checks the screen width, and applies css changes when there are less than a certain number of pixels:
 
 ```
-@media screen and (max-width: 500px) {
+@media screen and (max-width: {number}px) {
     class {
         css
     }
@@ -51,9 +51,11 @@ body.light/dark-mode class {
 ```
 
 # to do
+- [ ] add a tertiary color for `h3` and smaller headers
+- [ ] clean up all `css` files, so that they are reordered in a more straightforward way
+  - I will probably use a pastel pink for dark mode, and a pink from [the gruvbox light theme](https://github.com/morhetz/gruvbox)
 - [ ] add a download button to the header of the recipes
       - now the header will probably look like: `home button`, `theme toggle`, a gap, `download button`, and `notes button` on one line, and the title of the recipe on the next line
       - the download should link to a `recipe.md` that has the `tags` section removed (probably in a `recipes/` folder inside `cookbook`)
-- [ ] clean up all `css` files, so that they are reordered in a more straightforward way
 - [ ] update `main.rs` to add `target="_blank"` to the `source` links at the bottom of recipes (if possible)
 - [ ] bugfix `localStorage` not always remembering correctly on page back and forward
