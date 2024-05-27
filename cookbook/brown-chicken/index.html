@@ -29,50 +29,33 @@
                 <input type="checkbox" checked id="checkbox" onchange="switchcolors(event)">
                 <span class="slider round"></span>
             </label>
-        </div><h2 class="recipe-name">-organization notes</h2>        
+        </div><h2 class="recipe-name">brown chicken</h2>        
         <button onclick="show_hide_notes()" id="notes-button">hide my notes</button>
-        </div><ul>
-<li>within the <code>recipes</code> folder, there are individual markdown notes with each recipe I have made or want to make
+        </div><h2>prep time</h2>
 <ul>
-<li>each recipe has a <code>source</code> at the bottom, so as to be able to find the original recipe</li>
+<li>10 minutes</li>
 </ul>
-</li>
-<li>these recipes get saved to a separate markdown file to allow for easy modifications after cooking
+<h2>bake time</h2>
 <ul>
-<li>generally these modifications will be made by adding an arrow <code>-&gt;</code> after whatever step or ingredient I changed, with the change in bold</li>
+<li>45 - 60 minutes</li>
 </ul>
-</li>
-<li>some recipes will also have photos at the bottom showing finished products</li>
-</ul>
-<h2>sorting</h2>
+<h2>ingredients</h2>
 <ul>
-<li>each recipe has a number of tags in their file properties, split into different categories</li>
-<li>tags for what kind of meal it is
-<ul>
-<li><code>breakfast</code>, <code>lunch</code>, <code>dinner</code>, <code>appetizer</code></li>
+<li>1/2 cup italian salad dressing</li>
+<li>1/2 cup soy sauce</li>
+<li>6 bone-in chicken breast halves</li>
+<li>1/8 teaspoon onion salt</li>
+<li>1/8 teaspoon garlic salt</li>
+<li>kale leaves and spiced apple rings, optional</li>
 </ul>
-</li>
-<li>tags for main / secondary ingredient
+<h2>directions</h2>
+<ol>
+<li>in a measuring cup, combine salad dressing and soy sauce. pour 3/4 cup into a large resealable plastic bag; add chicken. seal the bag and turn to coat; refrigerate for 4 hours or overnight, turning several times. refrigerate remaining marinade for basting.</li>
+<li>drain chicken discarding marinade. place chicken, skin side up, on a rack in a roasting pan. sprinkle with onion salt and garlic salt. bake, uncovered, at 350° for 45-60 minutes or until a thermometer reads 170°, brushing occasionally with reserved marinade. garnish platter with kale and apple rings if desired.</li>
+</ol>
+<h2>source</h2>
 <ul>
-<li><code>beef</code>, <code>chicken</code>, <code>rice</code></li>
-</ul>
-</li>
-</ul>
-<h2>chatgpt</h2>
-<ul>
-<li>I use chatgpt to convert the web recipe to a markdown recipe, using this prompt:</li>
-</ul>
-<pre><code>can you convert the following recipe into this format:
-
-all headings use two hashtags, with no space between the heading and the line below, in all lowercase
-don't add a newline between headings and points, and don't add a newline before headings, either
-don't bold, italicize, or capitalize anything but leave the bullet points and numbered lists, converted into markdown format
-don't capitalize the first words of any lines
-
-finally, place the resulting recipe into a markdown code snippet
-</code></pre>
-<ul>
-<li>interestingly, google gemini often flags these conversion requests as being "outside the capabilities of an llm" which makes little sense, but is frustrating</li>
+<li><a href="https://www.tasteofhome.com/recipes/marinated-baked-chicken/">tasteofhome.com</a></li>
 </ul>
 </div>
 <footer>
