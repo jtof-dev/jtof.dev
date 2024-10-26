@@ -4,7 +4,7 @@ use std::io::{self};
 
 fn main() -> io::Result<()> {
     // Specify the directory path
-    let directory_path = "../../../obsidian vault/recipes/";
+    let directory_path = "/home/andya/obsidian vault/projects/recipes/";
     // let directory_path = "recipes/";
 
     // Read the contents of the directory
@@ -29,11 +29,7 @@ fn main() -> io::Result<()> {
                         .collect();
                     let entry_name = entry_name_with_spaces.replace(" ", "-").to_lowercase();
                     let entry_contents = content;
-                    make_recipe_pages(
-                        entry_name,
-                        entry_name_with_spaces,
-                        entry_contents,
-                    );
+                    make_recipe_pages(entry_name, entry_name_with_spaces, entry_contents);
                 }
                 Err(err) => {
                     eprintln!("Error reading {}: {}", file_path.display(), err);
@@ -103,13 +99,12 @@ fn make_recipe_pages(
 }
 
 fn make_index_page() {
-
     let index_header_html = fs::read_to_string("src/index_header_html.html").unwrap();
     let footer_html = fs::read_to_string("src/footer_html.html").unwrap();
 
     let mut list_of_recipes = String::new();
 
-    let directory_path = "../../../obsidian vault/recipes/";
+    let directory_path = "/home/andya/obsidian vault/projects/recipes/";
     // let directory_path = "recipes/";
 
     // Read the contents of the directory
@@ -128,11 +123,17 @@ fn make_index_page() {
                 .take(entry_name_full.len() - 3)
                 .collect();
             let entry_name = entry_name_with_spaces.replace(" ", "-").to_lowercase();
-            let recipe_name_contents = format!("<a href=\"{}\" class=\"recipe-link\">{}</a><br>\n", entry_name, entry_name_with_spaces);
+            let recipe_name_contents = format!(
+                "<a href=\"{}\" class=\"recipe-link\">{}</a><br>\n",
+                entry_name, entry_name_with_spaces
+            );
             list_of_recipes.push_str(&recipe_name_contents);
         }
     }
 
-    let final_html_contents = format!("{}{}</div>{}", index_header_html, list_of_recipes, footer_html);
+    let final_html_contents = format!(
+        "{}{}</div>{}",
+        index_header_html, list_of_recipes, footer_html
+    );
     fs::write("index.html", final_html_contents.as_bytes()).unwrap();
 }
